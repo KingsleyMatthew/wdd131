@@ -1,0 +1,150 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins', sans-serif;
+background:#e5e5e5;
+}
+
+/* HEADER */
+
+header{
+background:#285273;
+color:white;
+text-align:center;
+}
+
+header span{
+display:block;
+padding:15px;
+font-size:1.2rem;
+}
+
+/* NAVIGATION */
+
+nav{
+display:flex;
+justify-content:space-around;
+background:#333;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:12px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#fff;
+color:#333;
+}
+
+/* MAIN */
+
+main{
+max-width:1000px;
+margin:0 auto;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+/* GRID LAYOUT */
+
+.cards{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+/* CARD STYLE */
+
+.card{
+background:white;
+border-radius:10px;
+border:1px solid #ccc;
+overflow:hidden;
+}
+
+.card h2{
+background:#285273;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+/* ABOUT SECTION */
+
+.about{
+display:flex;
+gap:20px;
+padding:20px;
+align-items:center;
+}
+
+.about img{
+    width:130px;
+    height: auto;
+    border: #ccc;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+    margin-left: 20px;
+}
+
+/* LOCATION */
+
+.location{
+display:flex;
+gap:20px;
+padding:20px;
+align-items:center;
+}
+
+.location img{
+    width: 130px;
+    height: auto;
+}
+
+/* ASIDE */
+
+aside ul{
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    flex-grow: 1;
+}
+
+aside li{
+    margin-bottom:10px;
+}
+
+h3 {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin: 10px 20px;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#285273;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+#lastmodified {
+    color: yellow;
+}
