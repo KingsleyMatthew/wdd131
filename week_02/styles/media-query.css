@@ -1,0 +1,53 @@
+/* Apply Google Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* light page background */
+}
+
+/* Header, main, footer common styles */
+header, main, footer {
+    max-width: 640px;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,0.1); /* faint border */
+    background-color: #cce0ff; /* blueish background */
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Main as CSS Grid, single column, gap 1rem */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Section elements with padding and lighter background */
+section {
+    padding: 1rem;
+    background-color: #ffffff; /* white sections */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* subtle shadow for depth */
+}
+
+/* Header title style */
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Section headings */
+section h2 {
+    margin-top: 0;
+    color: #003366; /* darker blue for headings */
+}
+
+/* Footer style */
+footer {
+    text-align: center;
+    font-weight: bold;
+    color: #003366;
+}
