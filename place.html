@@ -1,0 +1,65 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madagascar</title>
+
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+    <h1>Nigeria</h1>
+    </header>
+
+    <main>
+
+    <!-- HERO -->
+    <section class="hero">
+        <picture>
+        <source srcset="images/hero-small.webp" media="(max-width: 500px)">
+        <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
+        <img src="images/nigerian_flag.webp" alt="Madagascar Lemur">
+        </picture>
+
+        <!-- DATA CARD -->
+        <div class="card data">
+        <h2>Data</h2>
+            <div class="data-grid">
+                <span>Area:</span><span>587,041 sq km</span>
+                <span>Population:</span><span>27,691,018</span>
+                <span>Capital:</span><span>Abuja</span>
+                <span>Languages:</span><span>English, French</span>
+                <span>Currency:</span><span>Naira</span>
+                <span>Time Zone:</span><span>GMT+5</span>
+                <span>Calling Code:</span><span>+234</span>
+                <span>Internet TLD:</span><span>.ng</span>
+            </div>
+        </div>
+        <!-- WEATHER CARD -->
+        <div class="card weather">
+            <h2 id="weather-title">Weather</h2>
+
+            <img src="images/cloud.svg" alt="Weather icon" class="weather-icon">
+
+            <div class="weather-grid">
+                <span>Temperature:</span><span><span id="temp">10</span> °C</span>
+                <span>Conditions:</span><span>Partly Cloudy</span>
+                <span>Wind:</span><span><span id="wind">5</span> km/h</span>
+                <span>Wind Chill:</span><span id="windchill"></span>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+    <p>© <span id="year"></span> 🌸 Kingsley Matthew 🌸 Nigeria</p>
+    <p>Last Modification: <span id="modified"></span></p>
+    </footer>
+
+</body>
+</html>

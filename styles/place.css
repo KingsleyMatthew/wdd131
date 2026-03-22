@@ -1,0 +1,170 @@
+:root {
+  --red: #d21034;
+  --green: #2e8b57;
+  --light: #f4f4f4;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--light);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 12px solid var(--light);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CARD BASE */
+.card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* CARD HEADERS */
+.card h2 {
+  background: var(--green);
+  color: white;
+  padding: 0.6rem 1rem;
+  margin: -1.2rem -1.2rem 1rem -1.2rem;
+  font-size: 1.5rem;
+}
+
+/* DATA GRID */
+.data-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+ gap: 0.3rem 1rem;
+}
+
+.data-grid span:first-child {
+  font-weight: bold;
+  text-align: right;
+  color: #333;
+}
+
+.data-grid span:last-child {
+  color: #444;
+   text-align: left;
+}
+
+/* WEATHER TEXT */
+.weather-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+/* LABELS */
+.weather-grid span:first-child {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* VALUES */
+.weather-grid span:last-child {
+  text-align: left;
+}
+
+
+/* WEATHER ICON */
+.weather-icon {
+  width: 50px;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* FOOTER */
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* ======================= */
+/* 📱 MOBILE DESIGN */
+/* ======================= */
+@media (max-width: 767px) {
+
+  .card {
+    margin: 1rem;
+    text-align: center;
+  }
+
+  .data-grid span:first-child {
+    text-align: right;
+  }
+
+  .data-grid span:last-child {
+    text-align: left;
+  }
+}
+
+/* ======================= */
+/* 💻 DESKTOP DESIGN */
+/* ======================= */
+@media (min-width: 768px) {
+
+  /* FLOATING CARDS */
+  .card {
+    position: absolute;
+    width: 300px;
+  }
+
+  /* DATA LEFT */
+  .data {
+    top: 80px;
+    left: 70px;
+  }
+
+  /* WEATHER RIGHT */
+  .weather {
+    bottom: 70px;
+    right: 70px;
+  }
+
+  /* HIDE SVG */
+  .weather-icon {
+    display: none !important;
+  }
+
+  /* ADD EMOJI ICON */
+  #weather-title::after {
+    content: " ⛅";
+    font-size: 1.2rem;
+  }
+}
