@@ -1,12 +1,13 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This webpage showcases a selected place with key information, weather details, and a responsive design. It demonstrates modern web development techniques such as CSS Grid, media queries, responsive images, and JavaScript functionality, providing a clean and user-friendly experience across both mobile and desktop devices.">
+  <meta name="author" content="Kingsley Matthew Edet">
   <title>Madagascar</title>
 
   <link rel="stylesheet" href="styles/place.css">
-  <script src="scripts/place.js" defer></script>
 </head>
 
 <body>
@@ -20,9 +21,9 @@
     <!-- HERO -->
     <section class="hero">
         <picture>
-        <source srcset="images/hero-small.webp" media="(max-width: 500px)">
-        <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
-        <img src="images/nigerian_flag.webp" alt="Madagascar Lemur">
+        <source srcset="images/hero-image-small.webp" media="(max-width: 500px)">
+        <source srcset="images/hero-image-medium.webp" media="(max-width: 1000px)">
+        <img src="images/hero-image.webp" alt="Nigerian Flag">
         </picture>
 
         <!-- DATA CARD -->
@@ -60,6 +61,6 @@
     <p>© <span id="year"></span> ⫽ Kingsley Matthew ⫽ Nigeria</p>
     <p>Last Modification: <span id="modified"></span></p>
     </footer>
-
+    <script src="scripts/place.js" defer></script>
 </body>
 </html>
