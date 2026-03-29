@@ -12,7 +12,7 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent =
   "Last Modified: " + document.lastModified;
 
-// TEMPLE DATA (add precomputed year)
+// TEMPLE DATA WITH PRECOMPUTED YEAR
 const temples = [
   { templeName: "Aba Nigeria", location: "Aba, Nigeria", dedicated: "2005-08-07", area: 11500, year: 2005, imageUrl: "images/aba.webp" },
   { templeName: "Manti Utah", location: "Utah, USA", dedicated: "1888-05-21", area: 74792, year: 1888, imageUrl: "images/manti.webp" },
@@ -26,45 +26,64 @@ const temples = [
   { templeName: "London England", location: "London, England", dedicated: "1958-10-29", area: 9500, year: 1958, imageUrl: "images/london.webp" }
 ];
 
-// DISPLAY FUNCTION (optimized)
+// CREATE TEMPLE CARD
+function createTempleCard(t) {
+  const card = document.createElement("section");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = t.templeName;
+
+  const pLoc = document.createElement("p");
+  pLoc.innerHTML = `<strong>Location:</strong> ${t.location}`;
+
+  const pDed = document.createElement("p");
+  pDed.innerHTML = `<strong>Dedicated:</strong> ${t.dedicated}`;
+
+  const pArea = document.createElement("p");
+  pArea.innerHTML = `<strong>Area:</strong> ${t.area} sq ft`;
+
+  const img = document.createElement("img");
+  img.src = t.imageUrl;
+  img.alt = t.templeName;
+  img.loading = "lazy";
+  img.width = 346;
+  img.height = 217;
+  img.decoding = "async";
+
+  card.append(h2, pLoc, pDed, pArea, img);
+  return card;
+}
+
+// DISPLAY FUNCTION WITH LAZY RENDER
 const container = document.querySelector("#temple-container");
 const title = document.querySelector("#title");
 
-function displayTemples(list) {
-  container.innerHTML = ""; // still necessary
-  const fragment = document.createDocumentFragment();
+function displayTemplesLazy(list) {
+  container.innerHTML = "";
 
-  list.forEach(t => {
-    const card = document.createElement("section");
+  // Render first 3 temples immediately
+  const frag = document.createDocumentFragment();
+  list.slice(0, 3).forEach(t => frag.appendChild(createTempleCard(t)));
+  container.appendChild(frag);
 
-    const h2 = document.createElement("h2");
-    h2.textContent = t.templeName;
-
-    const pLoc = document.createElement("p");
-    pLoc.innerHTML = `<strong>Location:</strong> ${t.location}`;
-
-    const pDed = document.createElement("p");
-    pDed.innerHTML = `<strong>Dedicated:</strong> ${t.dedicated}`;
-
-    const pArea = document.createElement("p");
-    pArea.innerHTML = `<strong>Area:</strong> ${t.area} sq ft`;
-
-    const img = document.createElement("img");
-    img.src = t.imageUrl;
-    img.alt = t.templeName;
-    img.loading = "lazy";
-    img.width = 346;
-    img.height = 217;
-    img.decoding = "async";
-
-    card.append(h2, pLoc, pDed, pArea, img);
-    fragment.appendChild(card);
-  });
-
-  container.appendChild(fragment);
+  // Render remaining temples when browser is idle
+  const remaining = list.slice(3);
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      const frag2 = document.createDocumentFragment();
+      remaining.forEach(t => frag2.appendChild(createTempleCard(t)));
+      container.appendChild(frag2);
+    });
+  } else {
+    setTimeout(() => {
+      const frag2 = document.createDocumentFragment();
+      remaining.forEach(t => frag2.appendChild(createTempleCard(t)));
+      container.appendChild(frag2);
+    }, 50);
+  }
 }
 
-// FILTER FUNCTION (use precomputed year)
+// FILTER FUNCTION USING PRECOMPUTED YEAR
 function filterTemples(type) {
   let filtered = [];
   switch(type) {
@@ -84,7 +103,7 @@ function filterTemples(type) {
       filtered = temples;
       title.textContent = "Home";
   }
-  displayTemples(filtered);
+  displayTemplesLazy(filtered);
 }
 
 // NAVIGATION CLICK (event delegation)
@@ -97,5 +116,5 @@ document.querySelector("nav").addEventListener("click", e => {
 
 // INITIAL LOAD
 document.addEventListener("DOMContentLoaded", () => {
-  displayTemples(temples);
+  displayTemplesLazy(temples);
 });
