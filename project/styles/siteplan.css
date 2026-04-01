@@ -1,0 +1,65 @@
+/* COLOR SCHEMA */
+:root {
+  --black: #0B0B0B;
+  --gold: #C9A646;
+  --white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--black);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--gold);
+}
+
+section {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.box {
+  border: 1px solid var(--gold);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.wireframe {
+  background: #222;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid var(--gold);
+  margin-top: 20px;
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Poppins', sans-serif;
+  color: var(--gold);
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
