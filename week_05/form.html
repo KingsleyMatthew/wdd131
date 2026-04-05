@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Review Form</title>
+<meta name="description" content="Submit a product review including rating, installation date, useful features, and feedback.">
+<meta name="author" content="Kingsley Matthew Edet">
+<meta name="theme-color" content="#3a0a4a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles/form.css">
+
+<!-- FIX: defer added -->
+<script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+<header>
+    <h1>Product Review</h1>
+</header>
+
+<main>
+<form method="get" action="review.html">
+
+<!-- Product -->
+<label for="product">Product Name <span class="required">*</span></label>
+<select id="product" name="product" required>
+    <option value="" disabled selected>Select a Product ...</option>
+</select>
+
+<!-- Rating -->
+<fieldset>
+<legend>Overall Rating <span class="required">*</span></legend>
+
+<div class="star-rating">
+
+<input type="radio" name="stars" id="star5" value="5" required>
+<label for="star5" aria-label="5 stars"></label>
+
+<input type="radio" name="stars" id="star4" value="4" required>
+<label for="star4" aria-label="4 stars"></label>
+
+<input type="radio" name="stars" id="star3" value="3" required>
+<label for="star3" aria-label="3 stars"></label>
+
+<input type="radio" name="stars" id="star2" value="2" required>
+<label for="star2" aria-label="2 stars"></label>
+
+<input type="radio" name="stars" id="star1" value="1" required>
+<label for="star1" aria-label="1 star"></label>
+
+</div>
+</fieldset>
+
+<!-- Date -->
+<label for="installDate">Date of Installation <span class="required">*</span></label>
+<input type="date" id="installDate" name="installDate" required>
+
+<!-- Features -->
+<fieldset>
+<legend>Which features did you find useful? <em>(Check all that apply)</em></legend>
+
+<label for="durability">
+<input type="checkbox" id="durability" name="features[]" value="Durability">
+Durability
+</label>
+
+<label for="ease">
+<input type="checkbox" id="ease" name="features[]" value="Ease of Use">
+Ease of Use
+</label>
+
+<label for="performance">
+<input type="checkbox" id="performance" name="features[]" value="Performance">
+Performance
+</label>
+
+<label for="design">
+<input type="checkbox" id="design" name="features[]" value="Design">
+Design
+</label>
+
+</fieldset>
+
+<!-- Review -->
+<label for="review">Written Review <span>(Optional)</span></label>
+<textarea id="review" name="review"></textarea>
+
+<!-- Name -->
+<label for="username">Your Name <span>(Optional)</span></label>
+<input type="text" id="username" name="username">
+
+<!-- Submit -->
+<input type="submit" value="Post Review">
+
+</form>
+</main>
+
+<footer>
+<p>© <span id="year"></span> ⫽ Kingsley Matthew ⫽ Nigeria</p>
+<p>Last Modification: <span id="modified"></span></p>
+</footer>
+
+</body>
+</html>
