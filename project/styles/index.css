@@ -452,6 +452,24 @@ option {
   font-size: 1rem;
 }
 
+.models-header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.filters {
+  margin-top: 15px;
+}
+.contact-title {
+  margin-bottom: 15px;
+}
+
+.contact-subtext {
+  margin-bottom: 30px;
+  font-style: italic;
+  opacity: 0.8;
+  text-align: center;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

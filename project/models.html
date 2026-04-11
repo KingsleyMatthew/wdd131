@@ -3,58 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Models</title>
+<meta name="description" content="Browse and compare Mercedes-Benz models including sedans, SUVs, and sports cars.">
+<meta name="author" content="Kingsley Matthew Edet">
+
+<title>Models | Mercedes Luxury Hub</title>
+
 <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
 
 <header>
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main Navigation">
+
     <img src="images/logo.svg" alt="Luxury Hub Logo" class="nav-logo">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search cars...">
+      <input type="text" id="searchInput" placeholder="Search Mercedes models..." aria-label="Search Mercedes models">
+      <div id="suggestions" class="suggestions"></div>
     </div>
     
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="models.html">Models</a></li>
+      <li><a href="models.html" aria-current="page">Models</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+      ☰
+    </button>
   </nav>
 </header>
 
-<div class="models-header">
-  <h2>All Models</h2>
+<main>
+  <section class="models-header">
+    <h1>All Models</h1>
 
-  <div class="filters">
-    <button onclick="filterCars('all')">All</button>
-    <button onclick="filterCars('sedan')">Sedan</button>
-    <button onclick="filterCars('suv')">SUV</button>
-    <button onclick="filterCars('sports')">Sports</button>
-  </div>
-</div>
+    <p class="section-intro">
+      Explore the full range of Mercedes-Benz vehicles and compare performance, design, and luxury features.
+    </p>
 
-<div id="carContainer" class="grid"></div>
-<h2>Compare Models</h2>
+    <!-- FILTERS -->
+    <div class="filters">
+      <button type="button" onclick="filterCars('all')">All</button>
+      <button type="button" onclick="filterCars('sedan')">Sedan</button>
+      <button type="button" onclick="filterCars('suv')">SUV</button>
+      <button type="button" onclick="filterCars('sports')">Sports</button>
+    </div>
+  </section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Type</th>
-      <th>Performance</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody id="tableBody"></tbody>
-</table>
+  <section>
+    <div id="carContainer" class="grid"></div>
+  </section>
 
-<div id="modal" class="modal"></div>
+  <section class="comparison">
+    <h2>Compare Models</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Model</th>
+          <th scope="col">Type</th>
+          <th scope="col">Performance</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+
+      <tbody id="tableBody"></tbody>
+    </table>
+  </section>
+
+</main>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true"></div>
 
 <footer>
+  <p>© 2026 Mercedes Luxury Hub</p>
   <a href="references.html">References</a>
 </footer>
 

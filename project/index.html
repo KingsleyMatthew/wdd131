@@ -17,7 +17,7 @@
     <img src="images/logo.svg" alt="Luxury Hub Logo" class="nav-logo">
     <div class="search-box">
       <span class="search-icon">🔍</span>
-      <input type="text" id="searchInput" placeholder="Search Mercedes models...">
+      <input type="text" id="searchInput" placeholder="Search Mercedes models..." aria-label="Search Mercedes models">
 
       <div id="suggestions" class="suggestions"></div>
     </div>
@@ -28,35 +28,39 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+      ☰
+    </button>
   </nav>
 </header>
+<main>
 
-<section class="hero">
-  <img src="images/logo.svg" alt="Luxury Hub Logo" class="hero-logo">
+  <section class="hero">
+    <img src="images/logo.svg" alt="Luxury Hub Logo" class="hero-logo">
 
-  <h2>Luxury. Performance. Innovation.</h2>
-  <button onclick="scrollToModels()">Explore Models</button>
-</section>
+    <h2>Luxury. Performance. Innovation.</h2>
+    <button type="button" onclick="scrollToModels()">Explore Models</button>
+  </section>
 
-<section id="models">
-  <h2>Featured Cars</h2>
-  <div id="carContainer" class="grid"></div>
-</section>
+  <section id="models">
+    <h2>Featured Cars</h2>
+    <div id="carContainer" class="grid"></div>
+  </section>
 
-<section id="gallery">
-  <h2>Car Gallery</h2>
+  <section id="gallery">
+    <h2>Car Gallery</h2>
 
-  <div class="slider">
-    <button onclick="prevImage()">◀</button>
+    <div class="slider">
+      <button type="button" onclick="prevImage()" aria-label="Previous Image">◀</button>
 
-    <img id="sliderImage" src="images/E_class.webp" alt="Car Image" loading="lazy">
+      <img id="sliderImage" src="images/E_class.webp" alt="Car Image" loading="lazy">
 
-    <button onclick="nextImage()">▶</button>
-  </div>
-</section>
+      <button type="button" onclick="nextImage()" aria-label="Next Image">▶</button>
+    </div>
+  </section>
+</main>
 
-<div id="modal" class="modal"></div>
+<div id="modal" class="modal" role="dialog" aria-modal="true"></div>
 
 <footer>
   <p>© 2026 Mercedes Luxury Hub</p>

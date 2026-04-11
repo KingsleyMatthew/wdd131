@@ -261,3 +261,8 @@ window.onclick = function (e) {
     modal.style.display = "none";
   }
 };
+function scrollToModels() {
+  document.getElementById("models").scrollIntoView({
+    behavior: "smooth"
+  });
+}
