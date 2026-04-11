@@ -168,13 +168,15 @@ function prevImage() {
    MENU
 ========================= */
 function toggleMenu() {
-  document.querySelector("nav ul")?.classList.toggle("active");
+  document.querySelector(".nav-links")?.classList.toggle("active");
 }
 
-/* =========================
-   SEARCH
-========================= */
 document.addEventListener("DOMContentLoaded", () => {
+  displayCars(cars);
+  displayTable();
+  showImage();
+
+  /* SEARCH */
   const searchInput = document.getElementById("searchInput");
   const suggestionsBox = document.getElementById("suggestions");
 
@@ -196,6 +198,10 @@ document.addEventListener("DOMContentLoaded", () => {
       displayCars(filtered);
       suggestionsBox.innerHTML = "";
 
+      if (filtered.length === 0) {
+        suggestionsBox.innerHTML = `<div class="no-results">No cars found</div>`;
+      }
+
       filtered.forEach(car => {
         const div = document.createElement("div");
 
@@ -215,17 +221,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       suggestionsBox.style.display = "block";
     });
+
+    // 🔥 CLICK OUTSIDE FIX
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".search-box")) {
+        suggestionsBox.style.display = "none";
+      }
+    });
   }
 
-  displayCars(cars);
-  displayTable();
-  showImage();
-});
-
-/* =========================
-   CONTACT FORM (FIXED)
-========================= */
-document.addEventListener("DOMContentLoaded", () => {
+  /* CONTACT FORM */
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
@@ -251,6 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 /* =========================
    MODAL CLICK OUTSIDE
