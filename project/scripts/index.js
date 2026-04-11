@@ -22,7 +22,7 @@ const cars = [
     type: "suv",
     performance: "Very High",
     price: "$130,000",
-    img: "images/Glc.webp",
+    img: "images/G_class.webp",
     interior: ["images/G_ClassInt.webp", "images/G_ClassInt1.webp"],
     desc: "Iconic off-road SUV with rugged luxury interior."
   },
@@ -40,7 +40,7 @@ const cars = [
     type: "suv",
     performance: "High",
     price: "$55,000",
-    img: "images/GLC.webp",
+    img: "images/Glc.webp",
     interior: ["images/GLC_Int.webp", "images/GLC_Int1.webp"],
     desc: "Luxury SUV with modern practicality."
   },
