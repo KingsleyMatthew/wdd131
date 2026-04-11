@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Models</title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="images/logo.svg" alt="Luxury Hub Logo" class="nav-logo">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search cars...">
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<div class="models-header">
+  <h2>All Models</h2>
+
+  <div class="filters">
+    <button onclick="filterCars('all')">All</button>
+    <button onclick="filterCars('sedan')">Sedan</button>
+    <button onclick="filterCars('suv')">SUV</button>
+    <button onclick="filterCars('sports')">Sports</button>
+  </div>
+</div>
+
+<div id="carContainer" class="grid"></div>
+<h2>Compare Models</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Type</th>
+      <th>Performance</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<div id="modal" class="modal"></div>
+
+<footer>
+  <a href="references.html">References</a>
+</footer>
+
+<script src="scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<svg width="220" height="70" viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Gold gradient -->
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5d07a"/>
+      <stop offset="50%" stop-color="#c9a646"/>
+      <stop offset="100%" stop-color="#8c6b1a"/>
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Emblem circle -->
+  <circle cx="35" cy="35" r="22"
+    stroke="url(#goldGrad)"
+    stroke-width="2.5"
+    fill="none"
+    filter="url(#glow)">
+
+    <!-- subtle pulse animation -->
+    <animate attributeName="r"
+      values="22;24;22"
+      dur="3s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Star lines -->
+  <g stroke="url(#goldGrad)" stroke-width="2" filter="url(#glow)">
+    <line x1="35" y1="12" x2="35" y2="58"/>
+    <line x1="12" y1="35" x2="58" y2="35"/>
+    <line x1="18" y1="18" x2="52" y2="52"/>
+    <line x1="52" y1="18" x2="18" y2="52"/>
+  </g>
+
+  <!-- Text -->
+  <text x="75" y="42"
+    fill="url(#goldGrad)"
+    font-size="18"
+    font-family="Poppins, Arial, sans-serif"
+    letter-spacing="3"
+    font-weight="600"
+    filter="url(#glow)">
+    LUXURY HUB
+  </text>
+
+</svg>

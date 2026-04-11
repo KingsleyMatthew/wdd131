@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Mercedes Luxury Hub">
+<meta name="author" content="Kingsley Matthew Edet">
+<title>Contact | Luxury Hub</title>
+
+<link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="images/logo.svg" class="nav-logo" alt="Logo">
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<section class="contact-section">
+  <h2 class="contact-title">Contact Luxury Hub</h2>
+  <p class="contact-subtext">
+    Please fill out the form below and we’ll get back to you shortly.
+  </p>
+
+  <form id="contactForm" class="contact-form" method="get" action="#">
+
+    <label>
+      <span>Full Name <span class="asterisk">*</span></span>
+      <input type="text" id="name" required>
+    </label>
+
+    <label>
+      <span>Email <span class="asterisk">*</span></span>
+      <input type="email" id="email" required>
+    </label>
+
+    <label>
+      <span>Interested Model <span class="asterisk">*</span></span>
+      <select id="model" required>
+        <option>E-Class</option>
+        <option>C-Class</option>
+        <option>S-Class</option>
+        <option>GLC</option>
+        <option>AMG GT</option>
+      </select>
+    </label>
+
+    <label>
+      <span>Message <span class="asterisk">*</span></span>
+      <textarea id="message" required></textarea>
+    </label>
+
+    <button type="submit">Send Message</button>
+
+    <p id="formFeedback"></p>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Mercedes Luxury Hub</p>
+  <a href="references.html">References</a>
+</footer>
+
+<script src="scripts/index.js"></script>
+</body>
+</html>
