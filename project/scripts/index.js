@@ -22,7 +22,7 @@ const cars = [
     type: "suv",
     performance: "Very High",
     price: "$130,000",
-    img: "images/G_class.webp",
+    img: "images/Glc.webp",
     interior: ["images/G_ClassInt.webp", "images/G_ClassInt1.webp"],
     desc: "Iconic off-road SUV with rugged luxury interior."
   },
