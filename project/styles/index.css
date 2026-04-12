@@ -17,7 +17,9 @@ body {
   color: var(--white);
 }
 
-
+html, body {
+  overflow-x: hidden;
+}
 
 ul {
   display: flex;
@@ -461,6 +463,16 @@ option {
 }
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .navbar {
+    gap: 10px;
+  }
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
   ul {
     display: none;
     flex-direction: column;
@@ -495,6 +507,12 @@ option {
   .menu-toggle {
     display: block;
   }
+  .modal-content {
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
 }
 
 @media (min-width: 768px) {
